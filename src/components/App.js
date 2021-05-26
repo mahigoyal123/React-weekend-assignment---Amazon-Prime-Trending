@@ -28,9 +28,9 @@ const App = () => {
             <h1 data-testid="title">{slides[currSlides].title}</h1>
             <p data-testid="text">{slides[currSlides].text}</p>
         </div>
-        <button onClick={clickPrev} disabled={currSlides===0?true:false} data-testid="button-restart" >Prev</button>
-        <button onClick={clickNext} disabled={currSlides===slides.length-1?true:false} data-testid="button-prev">Next</button>
-        <button onClick={clickRestart} disabled={currSlides===0?true:false} data-testid="button-next">Restart</button>
+        <button onClick={clickPrev} disabled={currSlides===0?true:false} data-testid="button-prev" >Prev</button>
+        <button onClick={clickNext} disabled={currSlides===slides.length-1?true:false} data-testid="button-next">Next</button>
+        <button onClick={clickRestart} disabled={currSlides===0?true:false} data-testid="button-restart">Restart</button>
     </div> 
     
     </>
