@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 function App() {
 
-const [text, setText] = useState('');
+const [text, setText] = useState(localStorage.getItem('value'));
 
   const handleclick= (e)=> {
     setText(e.target.value);
@@ -14,7 +14,7 @@ const [text, setText] = useState('');
   
   return (
     <div>
-      <h2>{localStorage.getItem('value')}</h2>
+      <h2>{text}</h2>
       <input type="text" value={text} onChange={handleclick}/>
       
     </div>
@@ -24,4 +24,3 @@ const [text, setText] = useState('');
 export default App
 
 
-export default App
