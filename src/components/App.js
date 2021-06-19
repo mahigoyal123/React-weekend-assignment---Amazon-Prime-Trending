@@ -1,36 +1,27 @@
 import React, { useState } from 'react'
 
-const useStateWithLocalStorage = localStoragekey=> {
-  const [text, setText]= useState(
-  localStorage.getItem(localStoragekey) || ''
-  );
 
-
-  React.useEffect(()=> {
-    localStorage.setItem(localStoragekey, text);
-
-  }, [text]);
-
-  return [text, setText];
-};
 
 function App() {
-const [text, setText] = useStateWithLocalStorage(
-  'myvalue'
-);
+
+const [text, setText] = useState('');
 
   const handleclick= (e)=> {
     setText(e.target.value);
+    localStorage.setItem('value' ,text);
   }
 
   
   return (
     <div>
-      <h2>{text}</h2>
+      <h2>{localStorage.getItem('value')}</h2>
       <input type="text" value={text} onChange={handleclick}/>
       
     </div>
   )
 }
+
+export default App
+
 
 export default App
